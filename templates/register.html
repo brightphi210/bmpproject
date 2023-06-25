@@ -1,0 +1,114 @@
+
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-5">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+
+        <!-- --------------------icon-link--------------------- -->
+        <link rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://kit.fontawesome.com/7e5c572194.js" crossorigin="anonymous"></script>
+        <!-- --------------------css styling--------------------- -->
+        <link rel="stylesheet" href="{% static 'CSS/register.css' %}">
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            />
+
+        <!-- --------------------animations--------------------- -->
+        <link rel="stylesheet" href="animate.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+
+        <div class="back-images">
+            <img src="/images/b 1.webp" alt="" class="b-images1">
+            <img src="/images/b 2.webp" alt="" class="b-images2">
+            <img src="/images/b 3.webp" alt="" class="b-images3">
+            <img src="/images/b 4.webp" alt="" class="b-images4">
+            <img src="/images/b 3.webp" alt="" class="b-images5">
+            <img src="/images/b 4.webp" alt="" class="b-images6">
+        </div>
+
+        <div class="form-class">
+            <form action="" method="post">
+                {% csrf_token %}
+                <a href="{% url 'index' %}"><img src="{% static 'images/bmp innovations.png' %}" alt="" class="logo"></a>
+                <h4>Create Account</h4>
+                <div class="form-field">
+                    <label for="first_name" class="required">Full Name</label>
+                    {% render_field form.first_name class+="form-control" %}
+                </div>
+
+                <div class="form-field">
+                    <label for="email" class="required" >Email address</label>
+                    {% render_field form.email  class+="form-control" %}
+                </div>
+
+                <div class="form-field">
+                    <label for="username" class="required">Username</label>
+                    {% render_field form.username  class+="form-control" %}
+                </div>
+
+                <div class="form-field">
+                    <label for="password" class="required">Choose Pin</label>
+                    {% render_field form.password1 class+="form-control" id="myInput" %}
+                    <p>Password must contain a special character, alphabet, number [e.g @admin1234]</p>
+                </div>
+
+                <div class="form-field">
+                    <label for="password" class="required">Confirm Pin</label>
+                    {% render_field form.password2 class+="form-control" id="myInput2" %}
+                </div>
+
+                <!-- An element to toggle between password visibility -->
+                <span class="show_pass"><input type="checkbox" onclick="myFunction()"> Show Password</span>
+                <span class="show_pass"><input type="checkbox" onclick="myFunction2()"> Show Confirm Password</span>
+
+                {% for msg in messages %}
+                <p style="text-align: left; font-size:12px; padding-left:50px; color:rgb(133, 10, 10);"><i class="uil uil-exclamation-triangle"></i> {{msg}}</p>
+                {% endfor %}
+
+                <input type="submit" value="Register">
+
+                <div class="already">
+                    <p>Already have an account ? <a href="{% url 'signin' %}"><span>Sign in</span></a></p> 
+                </div>
+            </form> 
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                  x.type = "text";
+                } else {
+                  x.type = "password";
+                }
+              }
+        </script>
+
+        <script>
+            function myFunction2() {
+                var x = document.getElementById("myInput2");
+                if (x.type === "password") {
+                  x.type = "text";
+                } else {
+                  x.type = "password";
+                }
+              }
+        </script>
+        
+    </body>
+</html>

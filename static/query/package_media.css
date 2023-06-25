@@ -1,0 +1,108 @@
+/* ======================== media Query ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  :root {
+    /* ---------color------- */
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #020710;
+    --textiary-color: #1079e9;
+    --background-new-colorbackground-image: linear-gradient(
+      80deg,
+      rgb(240, 254, 255),
+      rgb(254, 254, 254),
+      rgb(254, 254, 254),
+      rgb(255, 234, 255) rgb(240, 254, 255)
+    );
+  
+    /* -----------spaces--------------- */
+    --padding-sides: 10px 10%;
+    --main-space: 30px 12%;
+  }
+  
+  .uil-times-square,
+  .uil-bars {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    #packages {
+        padding: 50px 5%;
+        padding-top: 70px;
+        color: #020710;
+      }
+      
+      #packages h2 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Space Grotesk", Sans-serif;
+        text-transform: capitalize;
+      }
+      
+      #packages p {
+        text-align: center;
+        padding-bottom: 50px;
+      }
+      
+      .packages-flex {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+      
+      .pack-1 {
+        padding: 60px;
+        background-color: var(--primary-color);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      
+      .pack-1 h4 {
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 20px;
+        border-bottom: solid 1px;
+        border-color: rgb(229, 229, 229);
+        margin-bottom: 20px;
+      }
+      
+      .pack-1 h3 {
+        font-size: 30px;
+        padding-bottom: 25px;
+      }
+      
+      .pack-1 sub {
+        font-size: 13px;
+        font-weight: 300;
+      }
+      
+      .pack-1 ul li {
+        padding-bottom: 10px;
+        list-style: none;
+        font-size: 15px;
+      }
+      
+      .pack-1 button {
+        margin-top: 20px;
+        padding: 10px 30px;
+        background-color: var(--textiary-color);
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        color: var(--primary-color);
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .pack-1 button:hover {
+        background-color: #08478a;
+        transition: all ease 0.5s;
+      }
+  }

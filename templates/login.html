@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-5">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <!-- --------------------icon-link--------------------- -->
+        <link rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://kit.fontawesome.com/7e5c572194.js" crossorigin="anonymous"></script>
+        <!-- --------------------css styling--------------------- -->
+        <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+            />
+
+        <!-- --------------------animations--------------------- -->
+        <link rel="stylesheet" href="animate.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+
+        <div class="back-images">
+            <img src="/images/b 1.webp" alt="" class="b-images1">
+            <img src="/images/b 2.webp" alt="" class="b-images2">
+            <img src="/images/b 3.webp" alt="" class="b-images3">
+            <img src="/images/b 4.webp" alt="" class="b-images4">
+            <img src="/images/b 3.webp" alt="" class="b-images5">
+            <img src="/images/b 4.webp" alt="" class="b-images6">
+        </div>
+
+
+        <div class="form-class">
+            <form action="" method="post">
+                 <a href="{% url 'index' %}"><img src="{% static 'images/bmp innovations.png' %}" alt="" class="logo"></a>
+                <h4>Login to your account</h4>
+                <p class="p">Hello, Log In & start managing your data.</p>
+
+                {% csrf_token %}
+                <div class="form-field">
+                    <label for="username" class="required">Username</label>
+                    <input type="text" id="username" required name="username">
+                </div>
+
+                <div class="form-field">
+                    <label for="password" class="required">Enter Pin</label>
+                    <input type="password" id="password" required name="password" >
+                </div>
+
+                <!-- An element to toggle between password visibility -->
+                <span class="show_pass"><input type="checkbox" onclick="myFunction()"> Show Password</span>
+
+                {% for msg in messages %}
+                <p style="text-align: left; font-size:14px; padding-left:50px; color:rgb(218, 28, 28);"><i class="uil uil-exclamation-triangle" style="color: red;"></i> {{msg}}</p>
+                {% endfor%}
+                <input type="submit" value="Login">
+
+                <div class="already">
+                    <p>Don't have an account yet? <a href="{% url 'register' %}"><span>signup</span></a></p> 
+                </div>
+            </form> 
+        </div>
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                  x.type = "text";
+                } else {
+                  x.type = "password";
+                }
+              }
+        </script>
+        
+    </body>
+</html>
