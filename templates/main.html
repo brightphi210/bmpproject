@@ -1,0 +1,162 @@
+
+{% load widget_tweaks %}
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BMP INOVATIONS</title>
+
+
+            <!-- Start of Async Drift Code -->
+    <script>
+        "use strict";
+        
+        !function() {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+            t.factory = function(e) {
+            return function() {
+                var n = Array.prototype.slice.call(arguments);
+                return n.unshift(e), t.push(n), t;
+            };
+            }, t.methods.forEach(function(e) {
+            t[e] = t.factory(e);
+            }), t.load = function(t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+            };
+        }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('w3ca58tv8d8x');
+    </script>
+    <!-- End of Async Drift Code -->
+        <!-- --------------------icon-link--------------------- -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <script src="https://kit.fontawesome.com/7e5c572194.js" crossorigin="anonymous"></script>
+
+        
+        
+        <link rel="stylesheet" href="{% static 'CSS/profile.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/contact.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/packages.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/products.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/dashboard.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/dash_gallery.css'%}">
+        <link rel="stylesheet" href="{% static 'CSS/main.css'%}">
+
+
+        <link rel="stylesheet" href="{% static 'query/dash_query.css'%}">
+        <link rel="stylesheet" href="{% static 'query/main_query.css'%}">
+        <link rel="stylesheet" href="{% static 'query/product_media.css'%}">
+        <link rel="stylesheet" href="{% static 'query/package_media.css'%}">
+        <link rel="stylesheet" href="{% static 'query/gallery_media.css'%}">
+        <link rel="stylesheet" href="{% static 'query/prof_media.css'%}">
+        
+        
+        
+
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <nav>
+            <!-- ================= dash board narve bar ================== -->
+            <div class="dash_narve">
+                <div class="logo-flex">
+                    <i class="uil uil-create-dashboard" onclick="closemenu()"></i>
+                    <!-- <i class="uil uil-align-left" ></i> -->
+                    <a href="{% url 'index' %}"><img src="{% static 'images/bmp innovations.png' %}" alt="" class="logo"></a> 
+                    
+                </div>
+                                    
+                <div class="dash-flex">
+                    <a href="{% url 'profile' %}"><img src="{{user.profile.image.url}}" alt="" class="avatar"></a>
+            
+                    <div class="cart-flex">
+                        <a href="{% url 'dashboard' %}"><img src="/images/cart logo.png" alt="" ></a>
+                        <a href=""><p id="num_of_items" style="font-size: 13px;">{{order.num_of_items}}</p></a>
+                    </div>
+            
+                    <div class="bell-flex">
+                        <i class="uil uil-bell"></i>
+                        <p class="bell_num" style="font-size: 13px;">{{ total | length}}</p>
+                        <!-- <h2>No of comments: {{ post.comments.all | length }}</h2> -->
+                    </div>
+                </div>
+            </div>  
+        </nav>
+
+        <div class="dash_1">
+            <div>
+                 <h4 class="menu">Menu</h4>
+                 <a href="{% url 'dashboard' %}"><button class="dash"><i class="uil uil-tachometer-fast-alt"></i> Cart</button></a>
+                 <ul class="first_ul">
+                     <a href="{% url 'products' %}"><li><i class="uil uil-archive"></i> Products</li></a>
+                     <a href="{% url 'packages' %}"><li><i class="uil uil-package"></i> Packages</li></a>
+                     <a href="{% url 'dash_gallery' %}"><li><i class="uil uil-server-connection"></i> Gallery</li></a>
+                     <a href="{% url 'contact' %}"><li><i class="uil uil-phone-volume"></i> Contact</li></a>
+                 </ul>
+ 
+                 <h4 class="menu">Profile</h4>
+                 <ul class="first_ul">
+                     <a href="{% url 'profile' %}"><i class="uil uil-user-circle"></i> Profile</li></a><li>
+                     <a href="{% url 'signout'%}"><li><i class="uil uil-sign-out-alt"></i> Logout</li></a>
+                     <a href=""><li><i class="uil uil-moon"></i> Dark Mode</li></a>
+                 </ul>
+            </div>
+ 
+            <div class="details">
+                 <a href="{% url 'profile' %}"><img src="{{user.profile.image.url}}" alt="" class="avatar"></a>
+                 <div class="prof_desc">
+                     <p>{{user.first_name}}</p>
+                     <p>{{user.email}}</p>
+                 </div>
+            </div>
+         </div>
+ 
+ 
+         <div class="dash_12">
+             <div>
+                  <h4 class="menu1">Menu</h4>
+                  <!-- <button class="dash"><i class="uil uil-tachometer-fast-alt"></i> Dashboard</button> -->
+                  <ul class="first_ul1">
+                     <a href="{% url 'dashboard' %}"><li><i class="uil uil-tachometer-fast-alt"></i></li></a>
+                      <a href="{% url 'products' %}"><li><i class="uil uil-archive"></i></li></a>
+                      <a href="{% url 'packages' %}"><li><i class="uil uil-package"></i></li></a>
+                      <a href="{% url 'dash_gallery' %}"><li><i class="uil uil-server-connection"></i></li></a>
+                      <a href="{% url 'contact' %}"><li><i class="uil uil-phone-volume"></i></li></a>
+                  </ul>
+ 
+                  <h4 class="menu1">Profile</h4>
+                  <ul class="first_ul1">
+                      <a href="{% url 'profile' %}"><li><i class="uil uil-user-circle"></i></li></a>
+                      <a href="{% url 'signout'%}"><li><i class="uil uil-sign-out-alt"></i></li></a>
+                      <a href=""><li><i class="uil uil-moon"></i></li></a>
+                  </ul>
+             </div>
+ 
+             <div class="details1">
+                 <a href="{% url 'profile' %}"><img src="{{user.profile.image.url}}" alt="" class="avatar"></a>
+                 <div>
+                 </div>
+            </div>
+         </div>
+    {% block content %}
+    {% endblock %}
+    </body>
+    <script src="{% static 'main.js' %}"></script>
+    <script src="{% static 'media_main.js' %}"></script>
+    <script></script>
+</html>

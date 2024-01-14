@@ -1,0 +1,73 @@
+
+
+{% extends 'main.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<section id="dashbord">
+    <div class="dashboard">
+
+        <!-- ========================== dash board secong part ================================ -->
+        <div class="dash_2">
+            <div class="dash2_body">
+                <div class="greeting_flex">
+                    <h2><i class="uil uil-phone-volume"></i> Contact</h2>
+                    <div class="good_morn">
+                        <h3 id="greetings"></h3>
+                        <p>welcome to your BMP Cart Dashboard</p>
+                    </div>
+                </div> 
+            </div>
+
+            <section class="profile-flex" >
+                {% for msg in messages %}
+                <button class="messages">{{msg}}</button>
+                {% endfor %}
+                <div class="profile-flex1">
+                    <div class="profile">
+                        <p><span style="color: rgb(163, 162, 162); padding:10px;">Username:</span> @{{ user.username}}</p>
+                        <p> <span style="color: rgb(163, 162, 162); padding:10px;">Email:</span> {{ user.email}}</p>
+                        <p><i class="uil uil-check"></i> Registered</p>
+                    </div>
+                </div>
+                <div class="profile-details">
+                    <form action="" method="POST" enctype="multipart/form-data" style="padding: 20px;" class="form">
+                        {% csrf_token %}
+                        <div class="profile-img1">
+                            <img src="{{ user.profile.image.url}}" alt="">
+                            {% render_field p_form.image  class+="file" %}
+                        </div>
+
+                        <div class="profile-img">
+                            <label for="">Enter Name: </label>
+                            {% render_field u_form.first_name  class+="form-input1" %}
+                            <br>
+                            <label for="">Username: </label>
+                            {% render_field u_form.username  class+="form-input1" %}
+                            <br>
+                            <label for="">Edith Email: </label>
+                            {% render_field u_form.email  class+="form-input1" %}
+                            <button type="submit" class="btns">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+</section>
+<script>
+    // ============ Date and Time ===================,
+    var now = new Date();
+    var hrs = now.getHours();
+    var msg_greet = "";
+
+    if (hrs > 0) msg_greet = "Good morning sunshine! 🌞" ; // REALLY early
+    if (hrs > 6) msg_greet = "Good morning Sir/Ma 😊"; // After 6am
+    if (hrs > 12) msg_greet = "Good afternoon Boss 😀"; // After 12pm
+    if (hrs > 17) msg_greet = "Good evening Dear 😁" ; // After 5pm
+    if (hrs > 22) msg_greet = "It's bedtime 💤💤"; // After 10pm
+
+    document.getElementById("greetings").innerHTML = msg_greet
+</script>
+{% endblock %}
+                

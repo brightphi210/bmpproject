@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BMP INOVATIONS</title>
+
+    <!-- Start of Async Drift Code -->
+    <script>
+        "use strict";
+        
+        !function() {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+            t.factory = function(e) {
+            return function() {
+                var n = Array.prototype.slice.call(arguments);
+                return n.unshift(e), t.push(n), t;
+            };
+            }, t.methods.forEach(function(e) {
+            t[e] = t.factory(e);
+            }), t.load = function(t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+            };
+        }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('w3ca58tv8d8x');
+    </script>
+    <!-- End of Async Drift Code -->
+
+        <!-- --------------------icon-link--------------------- -->
+        <link rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <script src="https://kit.fontawesome.com/7e5c572194.js"
+            crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="{% static 'CSS/styles.css'%}">
+
+        <link rel="stylesheet" href="{% static 'query/style_query.css' %}">
+
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    </head>
+    <body>
+
+        {% block content %}
+        <!-- -----------------header------------------ -->
+        <header id="header">
+            <div class="header1">
+                <a href=""><img src="{% static 'images/bmp innovations.png' %}"alt=""></a>
+            </div>
+
+            {% if user.is_authenticated %}
+            <div class="header2">
+                <ul id="sidemenu">
+                    <a href=""><li>Home</li></a>
+                    <a href="{% url 'gallery' %}"><li>Gallery</li></a>
+                    <a href=""><li>About Us</li></a>
+                    <a href="{% url 'contact_home' %}"><li>Contact Us</li></a>
+                    <a href="{% url 'post' %}"><li>Blog</li></a>
+                    <a href="{% url 'dashboard' %}"><li class="register">Dashboard</li></a>
+                    <a href="{% url 'signout'%}"><li class="login">LOGOUT</li></a>
+                    <i class="uil uil-times-square" onclick="close1menu()"></i>
+                </ul>
+
+                <div class="header3">
+                    <a href="{% url 'dashboard' %}"><img src="{% static 'images/cart logo.png' %}" alt=""></a>
+                    <a href=""><p id="num_of_items" style="font-size: 13px;">{{order.num_of_items}}</p></a>
+                </div>
+
+                <a href="{% url 'profile' %}"><img src="{{user.profile.image.url}}" alt="" class="avatar"></a>
+                
+            </div>
+            <i class="uil uil-bars" onclick="open1menu()"></i>
+
+            {% else %}
+
+            <div  class="header2">
+                <ul id="sidemenu">
+                    <a href=""><li>Home</li></a>
+                    <a href="{% url 'gallery' %}"><li>Gallery</li></a>
+                    <a href=""><li>About Us</li></a>
+                    <a href="{% url 'contact_home' %}"><li>Contact Us</li></a>
+                    <a href="{% url 'signin' %}"><li class="login">LOGIN</li></a>
+                    <a href="{% url 'register' %}"><li class="register">Register</li></a>
+                    <i class="uil uil-times-square" onclick="close1menu()"></i>
+                </ul>
+
+                <div class="header3">
+                    <a href="{% url 'signin' %}"><img src="{% static 'images/cart logo.png' %}" alt=""></a>
+                    <a href=""><p id="num_of_items" style="font-size: 13px;">{{num_of_items}}</p></a>
+                </div>
+            </div>
+            <i class="uil uil-bars" onclick="open1menu()"></i>
+
+            {% endif %}
+        </header>
+
+
+        <!-- ------------------------first_home--------------------------- -->
+        <section id="first_home">
+            <div class="first_home">
+                <div class="first_home_write">
+                    {% for msg in messages %}
+                    <button class="messages" style="margin-bottom: 30px; background-color:rgb(95, 147, 246); padding-left:20px; padding-right:20px;"><i class="uil uil-exclamation-triangle"></i> {{msg}}</button>
+                    {% endfor %}
+                    <h4>DO IT BETTER TODAY</h4>
+                    <h2>Let’s grow <br> your <span class="auto-type"></span></h2>
+                    <h5>
+                        We offer the latest & trending styles in logo designs,
+                        ,animation <br>
+                        & illustration graphics for your brand, business or
+                        organization.
+                    </h5>
+                    <a href="{% url 'signin' %}"><button>Get Started Now</button></a>
+
+                    <div class="home-flex">
+                        <h4><span>500+</span> Clients Globally</h4>
+                        <h4><span>2K+</span> Jobs Done</h4>
+                    </div>
+                </div>
+
+
+                <img src="/images/head new.png" alt="">
+            </div>
+        </section>
+
+
+
+        <section id="services-page">
+            <div class="services-page">
+                <h2>our Services</h2>
+                <p>We offer a variety of services with the sole purpose of
+                    growing your <br> brand and making it marketable.
+                </p>
+
+                <div class="services-flex">
+                    <div class="services">
+                        <img src="/images/Group 265.png" alt="">
+                        <h4>Logo Designs</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-1">Show me more</button>
+                    </div>
+
+                    <div class="services">
+                        <img src="/images/Saly-25.png" alt="">
+                        <h4>Advert Designs</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-2">Show me more</button>
+                    </div>
+
+                    <div class="services">
+                        <img src="/images//Saly-26.png" alt="">
+                        <h4>Stationary Designs</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-3">Show me more</button>
+                    </div>
+
+                    <div class="services">
+                        <img src="/images//Saly-26.png" alt="">
+                        <h4>Brand Identity Designs</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-4">Show me more</button>
+                    </div>
+
+                    <div class="services">
+                        <img src="/images/Group 267.png" alt="">
+                        <h4>Web Development</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-5">Show me more</button>
+                    </div>
+
+                    <div class="services">
+                        <img src="/images/Group 265.png" alt="">
+                        <h4>App Development</h4>
+                        <p>
+                            We understand that every business has
+                            unique requirements, so whether printed
+                        </p>
+
+                        <button class="see-more" data-name="p-6">Show me more</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="services-preview">
+            <div class="service" data-target="p-1">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">LOGO DESIGNS</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i> 
+                    A logo is a symbol or design used to identify a 
+                    company or organization, as well as its products, 
+                    services, employees, etc.
+
+                    In its simplest definition, a logo identifies. 
+                    It’s how your company is recognized and remembered 
+                    among others. It also functions as the face of your business.
+                </span>
+
+            </div>
+
+
+            <div class="service" data-target="p-2">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">ADVERT DESIGNS</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i>
+                    Advert design is the intersection of marketing and design. 
+                    It refers to the visual artwork created specifically for advertisements 
+                    Ad design, which is usually used synonymously 
+                    with graphic design advertising, differs in the fact that 
+                    its sole purpose is to sell products and services.
+                </span>
+            </div>
+
+
+            <div class="service" data-target="p-3">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">STATIONERY DESIGNS</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i> 
+                    Stationery design is integral to branding because it 
+                    produces the templates used for important internal and 
+                    external communication in a business. This includes official 
+                    letters, invoices, memos, and company reports. When an organization 
+                    has well-designed and on-brand stationery for all its communication, 
+                    it creates a feeling of consistency.
+                </span>
+            </div>
+
+            <div class="service" data-target="p-4">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">BRAND IDENITY DESIGNS</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i>
+                    Brand identity is the collection of all elements that 
+                    a company creates to portray the right image to its consumer. 
+                    Brand identity is different from “brand image” and “branding,” 
+                    even though these terms are sometimes treated as interchangeable.
+
+                    The term branding refers to the marketing practice of actively shaping a distinctive 
+                    brand. Brand is the perception of the company in the eyes of the world.
+                </span>
+            </div>
+
+            <div class="service" data-target="p-5">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">WEB DEVELOPMENT</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i>
+                    A business’s online presence, regardless of industry, 
+                    can have a massive impact on its success. In this day 
+                    and age, some businesses still don’t realize that a majority 
+                    of their customers will visit their website before making a purchase.
+
+                    Having a strong online presence, particularly a website, 
+                    can be make or break for generating more revenue. Yes, the quality of 
+                    your website impacts results, but the purpose of this 
+                    article to stress the importance of making sure you have a website.
+                </span>
+            </div>
+
+
+            <div class="service" data-target="p-6">
+                <i class="uil uil-times"></i>
+                <h3 class="service-head">APP DEVELOPMENT</h3>
+                <span class="des-1"><i class="uil uil-check-circle"></i>
+                    Every business aims to increase their audience base, 
+                    brand popularity, sales, and revenue generation. 
+                    A mobile application is capable of doing all these and 
+                    helps businesses find multiple growth opportunities and 
+                    generate hefty revenues.
+
+                    Today, Smartphone users are growing by leaps and bounds. 
+                    It is believed that approximately 80% of the population of 
+                    late uses mobile phones.
+                </span>
+            </div>
+        </div>
+
+
+        <!-- ===============================Product============================= -->
+        <section id="products">
+            <div class="products">
+                <div class="product-text">
+                    <h2>our Products</h2>
+                    <p>
+                        We offer a variety of services with the sole purpose of
+                        growing your <br>
+                        brand and making it marketable.
+                    </p>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="product-images">
+                    {% for product in products %}
+                    <div class="p-images">
+                        <img src="{{product.imageURL}}" alt="">
+                        <h4>{{product.name}}</h4>
+                        <p>{{product.description}}</p>
+                        <div class="cart-flex">
+                            <button>${{product.price}}</button>
+                            <button id="update-cart"
+                                data-product="{{product.id}}"
+                                data-action="add">Add to cart</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="product-images">
+                    {% for product in products %}
+                    <div class="p-images">
+                        <img src="{{product.imageURL}}" alt="">
+                        <h4>{{product.name}}</h4>
+                        <p>{{product.description}}</p>
+                        <div class="cart-flex">
+                            <button>${{product.price}}</button>
+                            <a href="{% url 'signin' %}" >
+                                <button id="update-cart"
+                                    data-product="{{product.id}}"
+                                    data-action="add" style="width: 120px;">Add to cart
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <a href="{% url 'products' %}"><button class="see-more1">See
+                        More</button></a>
+                {% else %}
+                <a href="{% url 'signin' %}"><button class="see-more1">See More</button></a>
+                {% endif %}
+            </section>
+
+
+
+            <!-- ================================ Value =============================== -->
+            <section id="our-value">
+                <div class="our-value">
+                    <div class="our-value-text">
+                        <h3>Who We Are</h3>
+                        <h1>
+                            We Create Track for <br>
+                            Businesses to Grow.
+                        </h1>
+                        <h4>
+                            We believe brand interaction is key
+                            to communication. <br> Real innovations
+                            and positive customer experience are <br>
+                            the heart of success.
+                        </h4>
+
+                        <h2>Our Values & Features</h2>
+                        <ul>
+                            <li> <i class="uil uil-tachometer-fast-alt"></i>
+                                Fast Delivery</li>
+                            <li> <i class="uil uil-truck"></i> Quality Delivery</li>
+                            <li> <i class="uil uil-refresh"></i> Reliability</li>
+                            <li> <i class="uil uil-user-nurse"></i> Mentorship</li>
+                        </ul>
+                    </div>
+                    <img src="/images/1.png" alt="">
+                </div>
+
+                <div class="start-now">
+                    <h2>
+                        Grab an offer, grow & boost <br>
+                        your <span class="auto-type2"></span>
+                    </h2>
+                    <a href="{% url 'signin' %}"><button>Start Now</button></a>
+                </div>
+            </section>
+
+
+
+
+            <!-- ---------------------------------Packages=-------------------------- -->
+            <section id="packages">
+                <h2>
+                    Pick A Package That Fit Your <br>
+                    Business Goals
+                </h2>
+                <p>(These Packages Consist Of Services)</p>
+                <div class="packages-flex">
+
+                    {% if user.is_authenticated %}
+                    {% for package in packages %}
+                    <div class="pack-1">
+                        <h4>{{package.name}}</h4>
+                        <h3>${{package.price}} <sub>only</sub></h3>
+                        <ul>
+                            {% for desc in package.desc_arr %}
+                                <li>{{desc}}</li>
+                            {% endfor %}
+
+                        </ul>
+
+                        <a href="{% url 'packages_more' package.id %}"><button id="select_plan">SELECT THIS PLAN</button></a>
+                    </div>
+                    {% endfor %}
+
+                    {% else %}
+
+                    {% for package in packages %}
+                    <div class="pack-1">
+                        <h4>{{package.name}}</h4>
+                        <h3>${{package.price}} <sub>only</sub></h3>
+                        <ul>
+                            {% for desc in package.desc_arr %}
+                                <li>{{desc}}</li>
+                            {% endfor %}
+
+                        </ul>
+
+                        <a href="{% url 'signin' %}"><button id="select_plan">SELECT THIS PLAN</button></a>
+                    </div>
+
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </section>
+
+
+
+
+
+            <!-- ---------------------------------Testimonies------------------------------ -->
+            <section id="testimonies">
+                <h2>our clients speak</h2>
+                <p>We have been working with clients around the world</p>
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <h3>PROFESSIONAL OUTCOME</h3>
+                            <h4>
+                                “They are absolutely the best people to deal with I just got my website
+                                back they are very polite and work very hard to achieve the best website
+                                you want, they hit mine out of the park after dealing with three other
+                                creative designers day by far are the best.”
+                            </h4>
+                            <div class="test-flex">
+                                <img src="/images/IOC.png" alt="">
+                                <span>IOC FOREX</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <h3>INCREDIBLE EXPERIENCE</h3>
+                            <h4>
+                                “I went with this company for designs of a logo.
+                                I must say I’m pleased with the outcome of the
+                                logo can’t wait to get it so I can put it to
+                                use.
+                                They expedited my order as I needed it for a few
+                                items for my business.”
+                            </h4>
+                            <div class="test-flex">
+                                <img src="/images/MAVEN Limited.png" alt="">
+                                <span>MAVEN Limited</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <h3>DEPENDABLE & RESPONSIVE</h3>
+                            <h4>
+
+                                “I would like to thank BMP INOVATIONS for their swift 
+                                and professional services with my bronze package.
+                                The package was excellent and i was impress with there rapid response. ”
+                              
+                            </h4>
+                            <div class="test-flex">
+                                <img src="/images/Chibest ventures.png" alt="">
+                                <span>Chibest Ventures</span>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <h3>IMPRESSIVE OUTPUT</h3>
+                            <h4>
+                                “We appreciate Imarked for making our logo! we are very satisfied!
+                                Very patient with my small changes and easy to communicate through
+                                put the whole process. we couldn't be happier with the whole experience
+                                and 100% recommend to have your logo made! Thank you !.”  
+                            </h4>
+                            <div class="test-flex">
+                                <img src="/images/Nigeria fashion logo.png"
+                                    alt="">
+                                <span>Nigeria Fashion</span>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <h3>OUTSTANDING OUTPUT</h3>
+                            <h4>
+                                “They are absolutely the best people to deal with I just got my logo
+                                back they are very polite and work very hard to achieve the exact logo
+                                you want they hit mine out of the park after dealing with three other
+                                creative designers day by far are the best.”
+                            </h4>
+                            <div class="test-flex">
+                                <img src="/images/cus_logo_a.jpg"
+                                    alt="">
+                                <span>Cush Footie</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+
+
+            <!-- ============================footer============================ -->
+            <footer>
+                <div class="footer">
+                    <div class="footer_image">
+                        <img src="/static/images/bmp innovationsz.png" alt="">
+                        <span>
+                            BMP Inovations is the best place to solve your
+                            business branding
+                            and growth challenges, make an other today and feel
+                            satisfield.
+                        </span>
+
+                    </div>
+
+
+                    <div class="quick_links">
+                        <h4>QUICK LINKS</h4>
+                        <a href="{% url 'gallery' %}"><span>Gallery</span></a>
+                        <a href="{% url 'gallery' %}"><span>About us</span></a>
+                        <a href="{% url 'contact' %}"><span>Contact us</span></a>
+                        <a href="{% url 'dashboard' %}"><span>Dashboard</span></a>
+                    </div>
+
+                    <div class="address">
+                        <h4>ADDRESS</h4>
+                        <span><i class="uil uil-location-pin-alt"></i> 34 D/line, Port Harcourt, Rivers State</span>
+                        <span><i class="uil uil-missed-call"></i> +234 80944 22807</span>
+                        <span><i class="uil uil-envelopes"></i> bmpinovations@gmail.com</span>
+                    </div>
+
+
+                    <div class="social">
+                        <h4>SOCIAL MEDIA</h4>
+                        <a href="https://www.facebook.com/profile.php?id=100083208818538">
+                            <i class="uil uil-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com/BmpInovation?t=a_Rkq0vAmB4UUqI4cw67CA&s=09">
+                            <i class="uil uil-twitter"></i>
+                        </a>
+                        <a href="{% url 'register' %}">
+                            <button >Sign Up</button>
+                        </a>
+                    </div>
+                </div>
+
+
+                <hr style="height:1px;border-width:0;color:rgb(42, 42,
+                    80);background-color:rgb(42, 42, 80); margin-bottom:40px;">
+                <span class="copy">Copyright © 2021-2023 BMP Inovations Company
+                    S.L. All rights reserved.</span>
+
+            </footer>
+
+
+    <!-- Swiper JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js">
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        loop:true,
+        spaceBetween: 10,
+        speed:1500,
+        autoplay:{
+            delay:1500
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+            320: {
+            slidesPerView: 1,
+            },
+
+            480: {
+            slidesPerView: 2,
+            },
+
+            768: {
+            slidesPerView: 2,
+            },
+            1200: {
+            slidesPerView: 3,
+            },
+        },
+        });
+    </script>
+                <!-- ----------------------text script--------------- -->
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+                <script>
+        let typed = new Typed(".auto-type",{
+            strings: ["Brand", "Business"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop:true
+        })
+        </script>
+                <!-- ----------------------text script--------------- -->
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+                <script>
+            let typed1 = new Typed(".auto-type2",{
+                strings: ["Brand", "Business", "Company"],
+                typeSpeed: 100,
+                backSpeed: 100,
+                loop:true
+            })
+            </script>
+                <script>
+            // ------------------------- new popup Modal -----------------------------------
+            let preveiwContainer = document.querySelector(".services-preview");
+            let previewBox = preveiwContainer.querySelectorAll(".service");
+
+            document.querySelectorAll(".see-more").forEach((product) => {
+            product.onclick = () => {
+                preveiwContainer.style.display = "flex";
+                let name = product.getAttribute("data-name");
+                previewBox.forEach((preview) => {
+                let target = preview.getAttribute("data-target");
+                if (name == target) {
+                    preview.classList.add("active");
+                }
+                });
+            };
+            });
+
+            previewBox.forEach((close) => {
+            close.querySelector(".uil-times").onclick = () => {
+                close.classList.remove("active");
+                preveiwContainer.style.display = "none";
+            };
+            });
+      </script>
+        <script>
+            // -----------------------Narvebar open and close---------------
+            var sidemenu = document.getElementById("sidemenu")
+
+            function open1menu() {
+            sidemenu.style.right = '0'
+            }
+
+
+            function close1menu() {
+            sidemenu.style.right = '-100%'
+            }
+      </script>
+            <script src="{% static 'main.js' %}"></script>
+            {% endblock %}
+        </body>
+    </html>

@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  :root {
+    /* ---------color------- */
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #020710;
+    --textiary-color: #1079e9;
+    --background-new-colorbackground-image: linear-gradient(
+      80deg,
+      rgb(240, 254, 255),
+      rgb(254, 254, 254),
+      rgb(254, 254, 254),
+      rgb(255, 234, 255) rgb(240, 254, 255)
+    );
+  
+    /* -----------spaces--------------- */
+    --padding-sides: 10px 10%;
+    --main-space: 30px 12%;
+  }
+
+    /* ============================================== dash_2 ============================ */
+.dash_narve{
+    display: grid;
+    grid-template-columns: 3fr 200px;
+    padding: 15px 5%;
+    background-color: #f5f5f5;
+    align-items: center;
+    width:100% ;
+    position: fixed;
+    z-index: 2;
+}
+
+
+.dash-flex{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.logo-flex{
+  display: flex;
+  gap: 100px;
+}
+
+.logo{
+  width: 80px;
+}
+
+
+.menu{
+  color: grey;
+  font-weight: 500;
+  font-size: 13px;
+  padding-top: 50px;
+  border-bottom: gray 1px solid;
+  padding-bottom: 10px;
+}
+
+
+.uil-bell, .uil-create-dashboard{
+    font-size: 30px;
+    color: #020710;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.dash_narve .avatar{
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.cart-flex {
+    position: relative;
+    align-items: center;
+  }
+
+  .cart-flex img{
+    width: 20px;
+  }
+  
+  #num_of_items {
+    position: absolute;
+    background-color: var(--textiary-color);
+    bottom: 16px;
+    left: 18px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 8px;
+    color: var(--primary-color);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .bell-flex{
+    position: relative;
+  }
+  .uil-bell{
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .bell_num{
+    position: absolute;
+    background-color: var(--textiary-color);
+    bottom: 18px;
+    left: 20px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    color: var(--primary-color);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+  }

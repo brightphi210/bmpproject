@@ -1,0 +1,213 @@
+/* ======================== media Query ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  :root {
+    /* ---------color------- */
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #020710;
+    --textiary-color: #1079e9;
+    --background-new-colorbackground-image: linear-gradient(
+      80deg,
+      rgb(240, 254, 255),
+      rgb(254, 254, 254),
+      rgb(254, 254, 254),
+      rgb(255, 234, 255) rgb(240, 254, 255)
+    );
+  
+    /* -----------spaces--------------- */
+    --padding-sides: 10px 10%;
+    --main-space: 30px 12%;
+  }
+  
+  .uil-times-square,
+  .uil-bars {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    /* ---------------header right------------------ */
+
+    
+  /* ==================== dashboard ========================= */
+
+
+  .msg{
+    background-color: #82bdfc;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 100px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+
+    .dash_1{
+        background-color: #020710;
+        padding: 0;
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        transition: all ease-in 2s;
+        padding-left: 20px;
+    }
+
+    /* ========================= dash2_body ========================== */
+    .dash_2{
+        background-color: var(--primary-color);
+        width: 100%;
+        margin: auto;
+        margin-left: 0;
+    }
+
+
+    .dash_margin{
+        margin-left: 0;
+    }
+
+
+
+    .dash2_body{
+        padding: 20px 5%;
+        padding-top: 50px;
+        color: #020710;
+
+    }
+
+    .greeting_flex{
+        display: block;
+    }
+
+    .good_morn{
+        text-align: left;
+        display: grid;
+        padding-left: 20px;
+    }
+
+    .good_morn h3{
+        font-size: 18px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+
+    .good_morn p{
+        font-size: 12px;
+        padding: 0;
+    }
+
+
+    .totals{
+        padding-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .total_sub{
+        background-color: #daecff;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .total_sub2{
+        background-color: #efefef;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .total_sub3{
+        background-color: #f5daff;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .totals .uil{
+        font-size: 30px;
+    }
+
+    .totals h3{
+        font-size: 30px;
+    }
+
+
+
+    /* =========================== product_heading ============================= */
+    .product_heading{
+        box-shadow: rgba(171, 171, 171, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        background-color: var(--primary-color);
+        margin: 20px 5%;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .product_ul_1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        text-align: center;
+        list-style: none;
+        padding-top: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 10px;
+    }
+
+
+    .product_ul_1 li{
+
+    }
+
+    .product_items img{
+        width: 40px;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+
+
+    .product_items {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        text-align: left;
+        list-style: none;
+        background-color: #ffffff;
+        margin-top: 20px;
+        padding: 10px 0 ;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        font-size: 12px;
+        grid-gap: 10px;
+    }
+
+    .product_items:hover {
+        background-color: #f5f5f5;
+        cursor: default;
+    }
+
+    .uil-minus-square-full, .uil-plus-square{
+        cursor: pointer;
+        font-size: 15px;
+        /* display: block; */
+    }
+
+    .uil-minus-square-full:hover, .uil-plus-square:hover{
+        color: #6a6a6a;
+    }
+
+
+
+}

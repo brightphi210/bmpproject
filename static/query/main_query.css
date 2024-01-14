@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    /* ---------color------- */
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #020710;
+    --textiary-color: #1079e9;
+    --background-new-colorbackground-image: linear-gradient(80deg,
+            rgb(240, 254, 255),
+            rgb(254, 254, 254),
+            rgb(254, 254, 254),
+            rgb(255, 234, 255) rgb(240, 254, 255));
+
+    /* -----------spaces--------------- */
+    --padding-sides: 10px 10%;
+    --main-space: 30px 12%;
+}
+
+@media screen and (max-width: 767px) {
+
+    /* ============================================== dash_2 ============================ */
+    .dash_narve {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding: 20px 7%;
+        background-color: #f5f5f5;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        z-index: 2;
+    }
+
+
+    .dash-flex {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .uil-bell,
+    .uil-align-left {
+        font-size: 20px;
+        color: #020710;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .uil-align-left {
+        position: absolute;
+        left: 30px;
+        font-size: 30px;
+    }
+
+
+    .dash_narve .avatar {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .cart-flex {
+        position: relative;
+        align-items: center;
+    }
+
+    .cart-flex img {
+        width: 20px;
+    }
+
+    #num_of_items {
+        position: absolute;
+        background-color: var(--textiary-color);
+        bottom: 16px;
+        left: 18px;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-size: 6px;
+        color: var(--primary-color);
+        height: 15px;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .bell-flex {
+        position: relative;
+    }
+
+    .uil-bell {
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .bell_num {
+        position: absolute;
+        background-color: var(--textiary-color);
+        bottom: 20px;
+        left: 18px;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-size: 6px;
+        color: var(--primary-color);
+        height: 15px;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    /* ==================== dash ====================== */
+
+
+    .dashboard {
+        padding-top: 60px;
+        display: block;
+        color: var(--primary-color);
+    }
+
+    .dash_1 {
+        background-color: #020710;
+        padding: 50px;
+        padding-top: 5px;
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: 2;
+        /* display: none; */
+        top: 0;
+        right: 0;
+        transition: all ease-in-out 0.5s;
+    }
+
+    .close {
+        display: none;
+        width: 0;
+    }
+
+    .logo-flex {
+        display: flex;
+        gap: 50px;
+    }
+
+    .logo {
+        width: 50px;
+        margin-left: 50px;
+        padding-top: 13px;
+    }
+
+
+    .menu {
+        color: grey;
+        font-weight: 500;
+        font-size: 13px;
+        padding-top: 50px;
+        border-bottom: gray 1px solid;
+        padding-bottom: 10px;
+    }
+
+    .first_ul {
+        list-style: none;
+        font-size: 15px;
+        padding-top: 20px;
+        line-height: 50px;
+        padding-left: 20px;
+        cursor: pointer;
+
+    }
+
+    .first_ul a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+
+
+
+
+
+
+    .dash {
+        background-image: linear-gradient(45deg, #1079e9, rgb(116, 5, 122));
+        text-align: left;
+        padding: 10px 20px;
+        padding-left: 30px;
+        margin-top: 30px;
+        width: 100%;
+        border: none;
+        color: var(--primary-color);
+        font-size: 18px;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+
+    .details {
+        margin-top: 0;
+        display: block;
+        gap: 20px;
+        padding-left: 20px;
+    }
+
+    .details img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .details p {
+        font-size: 10px;
+        padding: 0;
+        color: #999999;
+    }
+
+    .prof_desc{
+        margin-top: 20px;
+    }
+
+    .first_ul li:hover {
+        color: #91beee;
+    }
+
+
+
+
+    /* ======================== closing ================== */
+    .dash_12 {
+        background-color: #020710;
+        padding: 50px;
+        padding-left: 0;
+        height: 100%;
+        width: 150px;
+        position: fixed;
+        display: none;
+        text-align: center;
+        transition: all ease-in 1s;
+    }
+
+    .close {
+        display: block;
+        display: none;
+    }
+
+    .menu1 {
+        color: grey;
+        font-weight: 500;
+        font-size: 13px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+
+    .first_ul1 {
+        list-style: none;
+        font-size: 25px;
+        padding-top: 20px;
+        line-height: 50px;
+        padding-left: 0;
+        cursor: pointer;
+        text-align: center;
+        color: white;
+    }
+
+    .dash1 {
+
+        border: none;
+        color: var(--primary-color);
+        font-size: 18px;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        display: none;
+    }
+
+
+
+    .details1 {
+        margin-top: 50px;
+        display: flex;
+        gap: 20px;
+        padding-left: 20px;
+        justify-content: center;
+    }
+
+    .details1 img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .details p {
+        font-size: 10px;
+        padding: 0;
+        color: #999999;
+    }
+
+
+    .checkout{
+        margin: 0;
+        margin-left: 200px;
+        margin-bottom: 50px;
+    }
+
+}

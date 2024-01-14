@@ -1,0 +1,123 @@
+/* ======================== media Query ============================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  :root {
+    /* ---------color------- */
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #020710;
+    --textiary-color: #1079e9;
+    --background-new-colorbackground-image: linear-gradient(
+      80deg,
+      rgb(240, 254, 255),
+      rgb(254, 254, 254),
+      rgb(254, 254, 254),
+      rgb(255, 234, 255) rgb(240, 254, 255)
+    );
+  
+    /* -----------spaces--------------- */
+    --padding-sides: 10px 10%;
+    --main-space: 30px 12%;
+  }
+  
+  .uil-times-square,
+  .uil-bars {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    #gallery_page{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 50px;
+        background-color: rgb(255, 255, 255);
+        justify-content: left;
+        color: black;
+        text-align: left;
+        align-items: center;
+        margin-top: 70px;
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        padding: 20px;
+      }
+      
+      #gallery_page img{
+        width:100%;
+        padding-top: 10px;
+      }
+      
+      .gallery_desc{
+        margin: auto;
+      }
+      .gallery_desc h2{
+        font-family: "Space Grotesk", Sans-serif;
+        font-size: 30px;
+        padding-top: 10px;
+      }
+      
+      .gallery_desc p{
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      
+      .list-flex{
+        list-style: none;
+        cursor: pointer;
+      }
+      
+      .list-flex li{
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 30px; 
+      border: rgb(186, 186, 186) solid 1px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 12px;
+      }
+      
+      .list{
+        cursor: pointer;
+      }
+      
+      .list-flex li:hover{
+        border: rgb(179, 177, 177) solid 1px;
+        
+      }
+      
+      .list-flex li.active {
+        background: rgb(30, 190, 253);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+      }
+      
+      .images_flex .images1.hide {
+        display: none;
+      }
+      
+      
+      /* ============================= image flex ========================= */
+      #images_flex{
+        padding: 20px 3%;
+      
+      }
+      
+      .images_flex{
+        padding-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        align-items: center;
+      }
+      
+      .images_flex img{
+        width: 100%;
+        border-radius: 10px;
+      }
+  }

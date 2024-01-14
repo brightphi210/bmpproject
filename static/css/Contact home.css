@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, li{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    padding: 4vw 8vw 4vw 8vw;
+    padding-top: 200px;
+}
+
+.container .contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+.first_section .links{
+    padding: 35px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.first_section .links h2{
+    margin-bottom: 15px;
+}
+.first_section .links ul li{
+    color: rgb(170, 170, 170);
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.first_section .links ul li i{
+    color: #017EFE;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.first_section .open_hours{
+    padding: 35px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.first_section .open_hours h2{
+    margin-bottom: 15px;
+}
+.first_section .open_hours ul li{
+    color: rgb(170, 170, 170);
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.first_section .open_hours ul li span{
+    color: rgb(92, 92, 92);
+    font-weight: 600;
+}
+
+
+.second_section form{
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.second_section form h2{
+    margin-bottom: 15px;
+}
+.second_section form label{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(170, 170, 170);
+}
+.second_section form input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(204, 202, 202);
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.second_section form textarea{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid rgb(204, 202, 202);
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.second_section form button{
+    padding: 10px;
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+    background-color: #017EFE;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 769px){
+    .container{
+        padding: 4vw 4vw 4vw 4vw;
+        padding-top: 100px;
+    }
+    .container .contact{
+        grid-template-columns: 1fr;
+    }
+
+    .first_section .links h2{
+        font-size: 16px;
+    }
+    .first_section .links ul li{
+        font-size: 12px;
+    }
+    .first_section .links ul li i{
+        font-size: 15px;
+    }
+
+    .first_section .open_hours h2{
+        font-size: 16px;
+    }
+    .first_section .open_hours ul li{
+        font-size: 12px;
+    }
+
+    .second_section form h2{
+        font-size: 16px;
+    }
+    .second_section form label{
+        font-size: 10px;
+    }
+    .second_section form button{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .container .contact{
+        grid-template-columns: 1fr;
+    }
+}
